@@ -1,0 +1,160 @@
+:root {
+  --bg-panel: rgba(14, 14, 16, 0.45);
+  --bg-header: rgba(255, 120, 0, 0.08);
+  --border-panel: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(255, 120, 0, 0.45);
+  --primary-color: #ff7800;
+  --text-main: #f5f5f5;
+  --text-muted: #9aa0a6;
+  --key-badge-bg: rgba(255, 255, 255, 0.12);
+  --key-badge-border: rgba(255, 255, 255, 0.2);
+  --border-radius: 4px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+}
+
+.browser-preview {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://wallpapercave.com/wp/wp13104550.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.hud-panel {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  min-width: 200px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  box-sizing: border-box;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+.hud-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.hud-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-icon {
+  font-size: 14px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.hud-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+}
+
+.key-badge {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-main);
+  background: var(--key-badge-bg);
+  border: 1px solid var(--key-badge-border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  line-height: 1.2;
+}
+
+.hud-body {
+  padding: 10px 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.hud-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.hud-counter {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hud-counter span {
+  color: var(--primary-color);
+}
+
+.screamer-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.screamer-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.dev-controls {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+  background: rgba(18, 18, 20, 0.85);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  z-index: 20;
+}
+
+.dev-controls button {
+  background: #232328;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.15s ease;
+}
+
+.dev-controls button:hover {
+  background: var(--primary-color);
+  color: #000;
+}
